@@ -1,0 +1,92 @@
+
+.new-transaction {
+	border: 1px solid #8080803d;
+	width: 400px;
+	margin: 2rem auto;
+	padding: 2rem;
+	border-radius: 5px;
+}
+.form-group {
+	display: flex;
+	flex-direction: column;
+}
+.form-group select {
+	height: 40px;
+	background: #eaeaea;
+	border: none;
+	border-radius: 7px;
+	padding: 0rem 1rem;
+	margin: 0.5rem;
+	cursor: pointer;
+}
+
+
+
+.content > h1 {
+	margin-bottom: 2rem;
+	border-bottom: 1px solid gainsboro;
+}
+.transaction .wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.close {
+	cursor: pointer;
+	background: var(--pure);
+	width: 20px;
+	height: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	user-select: none;
+	border-radius: 50%;
+	font-size: 10px;
+}
+.transaction .item {
+	margin-bottom: 7px;
+	border-radius: 3px;
+	flex-basis: 300px;
+	flex-grow: 1;
+	overflow: hidden;
+	max-width: 50%;
+}
+
+.transaction .item.income {
+	background-color: var(--green);
+}
+
+.transaction .item.expense {
+	background-color: red;
+}
+
+.tnx-id {
+	padding: 7px 1rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.tnx-id p {
+	font-family: monospace;
+	letter-spacing: 1px;
+}
+
+.tnx-info {
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	color: var(--pure);
+	background: var(--darkBlue);
+	align-items: center;
+}
+
+.tnx-body {
+	color: white;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-between;
+	font-weight: 300;
+	font-size: 14px;
+}
+
