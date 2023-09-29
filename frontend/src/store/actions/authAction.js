@@ -20,7 +20,7 @@ export const register = (user, navigate) => dispatch => {
 }
 
 export const login = (user, navigate) => dispatch => {
-    Axios.post('/api/user/login', user)
+    Axios.post('http://localhost:5500/api/user/login', user)
         .then(res => {
             localStorage.setItem('token', res.data.token)
             setAuthHeader(res.data.token)
@@ -32,4 +32,15 @@ export const login = (user, navigate) => dispatch => {
             navigate('/')
         })
         .catch(e => dispatch(userError(e.response.data.error)))
+}
+
+export const updateUser = () => dispatch => {
+    Axios.get('/api/user/update')
+    .then(res => {
+        dispatch({
+            type: SET_USER,
+            payload: res.data
+        })
+    })
+    .catch(e => dispatch(userError(e.response.data.error)))
 }

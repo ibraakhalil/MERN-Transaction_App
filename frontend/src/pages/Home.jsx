@@ -1,7 +1,7 @@
 import React from 'react'
 import './css/Home.css'
 import { useSelector } from 'react-redux'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 
@@ -15,7 +15,7 @@ function Home() {
         {isAuthenticate &&
           <h3>See Your All <button><Link to='/user/transaction'>Transactions</Link></button></h3>}
         {!isAuthenticate &&
-          <h3>Please <button> Sign In</button> to get all facilities</h3>}
+          <h3>Please <button> <Link to='/auth/login'>Sign In</Link> </button> to get all facilities</h3>}
       </div>
     </div>
   )

@@ -5,7 +5,8 @@
     --yellow: #f9e45b;
     --softGreen: #0ba236;
     --pure: #fff;
-    --green: #00d200;
+    --dark: #000;
+    --green: #00ff00;
 }
 
 
@@ -14,6 +15,11 @@
     padding: 0;
     box-sizing: border-box;
     font-family: poppins;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;
 }
 
 a {

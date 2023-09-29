@@ -6,21 +6,21 @@ import Login from '../pages/Login'
 import Register from '../pages/Register'
 import Transaction from '../pages/Transaction'
 import WhenLoggedIn from './WhenLoggedIn'
+import Products from '../pages/Products'
 
 
 function routes() {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
+      <Route path='/products' element={<Products/>} />
 
       <Route path='/auth/*' element={<WhenLoggedIn/>} >
         <Route path='register' element={<Register />} />
         <Route path='login' element={<Login />} />
       </Route>
 
-
       <Route path='/user/transaction' element={<Transaction/>}/>
-
 
       <Route path='*' element={<Error404 />} />
     </Routes>

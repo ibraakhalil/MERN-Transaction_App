@@ -3,8 +3,9 @@ import { useRef } from 'react'
 import { useEffect } from 'react'
 import './css/transaction.css'
 import { useDispatch, useSelector } from 'react-redux'
-import { createTransaction, deleteTransaction, getAllTransaction } from '../store/actions/transaction'
+import { createTransaction, getAllTransaction } from '../store/actions/transaction'
 import TnxCard from '../components/TnxCard'
+import { updateUser } from '../store/actions/authAction'
 
 
 
@@ -17,6 +18,7 @@ function Transaction() {
 
   useEffect(() => {
     dispatch(getAllTransaction())
+    dispatch(updateUser())
   }, [dispatch])
 
 

@@ -1,0 +1,87 @@
+.header {
+	background: var(--darkBlue);
+	height: 80px;
+	align-items: center;
+	display: flex;
+	padding: 0rem 1rem;
+}
+
+.header .wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+}
+
+.header .wrapper ul {
+	display: flex;
+}
+
+.header .wrapper ul a {
+	color: var(--pure);
+	padding: 7px 1rem;
+	font-family: poppins;
+}
+
+.balance {
+	background: var(--green);
+	padding: 2px 1rem;
+	border-radius: 3px;
+	font-size: 13px;
+}
+
+
+.user {
+	display: flex;
+}
+
+.user .avatar {
+	width: 50px;
+	height: 50px;
+	margin-right: 1rem;
+}
+
+.user .avatar img {
+	height: 100%;
+}
+
+.user .name {
+	color: var(--pure);
+}
+
+.user .name p {
+	font-size: 13px;
+	color: #cdcdcd;
+}
+
+.user .show {
+	width: 0px;
+	height: 0px;
+	margin: 1rem;
+	margin-top: 10px;
+	cursor: pointer;
+	position: relative;
+	border: 5px solid ;
+	border-color: #ffffff transparent transparent transparent;
+}
+
+.user .show ul {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	right: -25px;
+	top: 50px;
+	background: var(--darkBlue);
+	padding: 7px;
+}
+
+.user .show ul li {
+	padding: 0.5rem;
+	margin: 3px 0px;
+}
+.user .show ul li:hover {
+	background: var(--yellow);
+}
+.user .show ul li:hover a {
+	color: var(--dark);
+}

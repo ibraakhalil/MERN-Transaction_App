@@ -1,4 +1,5 @@
 import Axios from "axios"
+import { updateUser } from "./authAction"
 import {  GET_ALL_TRANSACTION } from "./types"
 
 
@@ -17,6 +18,7 @@ export const createTransaction = (transaction) => dispatch => {
     Axios.post('/api/transaction', transaction)
     .then(res => {
         dispatch(getAllTransaction())
+        dispatch(updateUser())
     })
     .catch(e => console.log(e.message))
 }
