@@ -12,7 +12,7 @@ const userError = (err) => {
 }
 
 export const register = (user, navigate) => dispatch => {
-    Axios.post('/api/user/register', user)
+    Axios.post('https://ik-bank.vercel.app/api/user/register', user)
         .then(res => {
             navigate('/auth/login')
         })
@@ -20,7 +20,7 @@ export const register = (user, navigate) => dispatch => {
 }
 
 export const login = (user, navigate) => dispatch => {
-    Axios.post('http://localhost:5500/api/user/login', user)
+    Axios.post('https://ik-bank.vercel.app/api/user/login', user)
         .then(res => {
             localStorage.setItem('token', res.data.token)
             setAuthHeader(res.data.token)
@@ -35,7 +35,7 @@ export const login = (user, navigate) => dispatch => {
 }
 
 export const updateUser = () => dispatch => {
-    Axios.get('/api/user/update')
+    Axios.get('https://ik-bank.vercel.app/api/user/update')
     .then(res => {
         dispatch({
             type: SET_USER,

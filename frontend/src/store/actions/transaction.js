@@ -4,7 +4,7 @@ import {  GET_ALL_TRANSACTION } from "./types"
 
 
 export const getAllTransaction = () => dispatch => {
-    Axios.get('/api/transaction')
+    Axios.get('https://ik-bank.vercel.app/api/transaction')
     .then(res => {
         dispatch({
             type: GET_ALL_TRANSACTION,
@@ -15,7 +15,7 @@ export const getAllTransaction = () => dispatch => {
 }
 
 export const createTransaction = (transaction) => dispatch => {
-    Axios.post('/api/transaction', transaction)
+    Axios.post('https://ik-bank.vercel.app/api/transaction', transaction)
     .then(res => {
         dispatch(getAllTransaction())
         dispatch(updateUser())
@@ -26,7 +26,7 @@ export const createTransaction = (transaction) => dispatch => {
 
 
 export const deleteTransaction = (transactionId) => dispatch => {
-    Axios.delete(`/api/transaction/${transactionId}`)
+    Axios.delete(`https://ik-bank.vercel.app/api/transaction/${transactionId}`)
     .then(res => {
         dispatch(getAllTransaction())
     })
