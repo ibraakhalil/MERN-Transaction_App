@@ -11,6 +11,7 @@ const userError = (err) => {
     }
 }
 
+
 export const register = (user, navigate) => dispatch => {
     Axios.post(`${API_URL}/api/user/register`, user)
         .then(res => {
