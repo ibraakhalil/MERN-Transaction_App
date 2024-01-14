@@ -1,5 +1,5 @@
 import Axios from 'axios'
-import { SET_USER, USER_ERROR } from './types'
+import { API_URL, SET_USER, USER_ERROR } from './types'
 import jwt from 'jwt-decode'
 import { setAuthHeader } from '../../utils/setAuthHeader'
 
@@ -12,7 +12,7 @@ const userError = (err) => {
 }
 
 export const register = (user, navigate) => dispatch => {
-    Axios.post('https://ik-bank.vercel.app/api/user/register', user)
+    Axios.post(`${API_URL}/api/user/register`, user)
         .then(res => {
             navigate('/auth/login')
         })
@@ -20,7 +20,7 @@ export const register = (user, navigate) => dispatch => {
 }
 
 export const login = (user, navigate) => dispatch => {
-    Axios.post('https://ik-bank.vercel.app/api/user/login', user)
+    Axios.post(`${API_URL}/api/user/login`, user)
         .then(res => {
             localStorage.setItem('token', res.data.token)
             setAuthHeader(res.data.token)
@@ -35,7 +35,7 @@ export const login = (user, navigate) => dispatch => {
 }
 
 export const updateUser = () => dispatch => {
-    Axios.get('https://ik-bank.vercel.app/api/user/update')
+    Axios.get(`${API_URL}/api/user/update`)
     .then(res => {
         dispatch({
             type: SET_USER,

@@ -1,6 +1,9 @@
 export const SET_USER = 'SET_USER'
 export const USER_ERROR = 'USER_ERROR'
 
+// export const API_URL = "http://localhost:5500"
+export const API_URL = "https://ik-bank.vercel.app"
+
 
 export const LOGIN_USER = 'LOGIN_USER'
 export const GET_ALL_TRANSACTION = 'GET_ALL_TRANSACTION'

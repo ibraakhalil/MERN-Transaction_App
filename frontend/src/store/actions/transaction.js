@@ -1,10 +1,10 @@
 import Axios from "axios"
 import { updateUser } from "./authAction"
-import {  GET_ALL_TRANSACTION } from "./types"
+import {  API_URL, GET_ALL_TRANSACTION } from "./types"
 
 
 export const getAllTransaction = () => dispatch => {
-    Axios.get('https://ik-bank.vercel.app/api/transaction')
+    Axios.get(`${API_URL}/api/transaction`)
     .then(res => {
         dispatch({
             type: GET_ALL_TRANSACTION,
@@ -15,7 +15,7 @@ export const getAllTransaction = () => dispatch => {
 }
 
 export const createTransaction = (transaction) => dispatch => {
-    Axios.post('https://ik-bank.vercel.app/api/transaction', transaction)
+    Axios.post(`${API_URL}/api/transaction`, transaction)
     .then(res => {
         dispatch(getAllTransaction())
         dispatch(updateUser())
@@ -26,7 +26,7 @@ export const createTransaction = (transaction) => dispatch => {
 
 
 export const deleteTransaction = (transactionId) => dispatch => {
-    Axios.delete(`https://ik-bank.vercel.app/api/transaction/${transactionId}`)
+    Axios.delete(`${API_URL}/api/transaction/${transactionId}`)
     .then(res => {
         dispatch(getAllTransaction())
     })
